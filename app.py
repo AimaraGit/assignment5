@@ -40,3 +40,7 @@ def create_order(user_id: int) -> dict:
         "product": product,
         "weather": weather,
     }
+
+if __name__ == "__main__":
+    res = create_order(75) 
+    print(res)

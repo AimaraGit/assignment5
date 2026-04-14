@@ -104,8 +104,8 @@ class TestCombinedScenario:
         SCENARIO: Two users in different cities place orders.
         Each should only have their own orders.
         """
-        alice_id = database.create_user("Alice", "Astana", config=TEST_DB_CONFIG)
-        bob_id   = database.create_user("Bob",   "Dubai",  config=TEST_DB_CONFIG)
+        alice_id = database.create_user("Anita", "Astana", config=TEST_DB_CONFIG)
+        bob_id   = database.create_user("Weizer",   "Dubai",  config=TEST_DB_CONFIG)
 
         run_create_order_with_real_db(alice_id, {"temperature": -5.0, "condition": "snow"})
         run_create_order_with_real_db(bob_id,   {"temperature": 40.0, "condition": "sunny"})

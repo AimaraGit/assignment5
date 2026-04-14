@@ -101,7 +101,7 @@ class TestDatabaseLayer:
         database.save_order(user_id=user_a, product="sunglasses", config=TEST_DB_CONFIG)
 
         orders_b = database.get_orders_for_user(user_b, config=TEST_DB_CONFIG)
-        assert len(orders_b) == 0   # Bob has no orders
+        assert len(orders_b) == 0 
 
 #Full Flow Integration Tests
 
@@ -125,7 +125,7 @@ class TestFullOrderFlow:
             return create_order(user_id)
 
     def test_full_flow_creates_order_in_db(self):
-        user_id = create_test_user("Alice", "Almaty")
+        user_id = create_test_user("Amber", "Almaty")
         result = self._patched_create_order(
             user_id,
             weather_response={"temperature": -2.0, "condition": "snow"}
@@ -139,7 +139,7 @@ class TestFullOrderFlow:
         assert orders[0]["product"] == "jacket"
     def test_full_flow_sunny_city(self):
         """User in a sunny city gets sunglasses"""
-        user_id = create_test_user("Bob", "Dubai")
+        user_id = create_test_user("Kaizer", "London")
         result = self._patched_create_order(
             user_id,
             weather_response={"temperature": 40.0, "condition": "sunny"}
